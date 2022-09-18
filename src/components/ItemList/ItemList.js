@@ -1,6 +1,6 @@
 import Item from "../Item/Item"
 
-
+import { Container } from 'react-bootstrap';
 
 const ItemList = ({ productos = [] }) => { 
 
@@ -12,13 +12,13 @@ const ItemList = ({ productos = [] }) => {
 
             <hr />
             
-           <container className="row">
+           <Container className="row">
             {productos.map((prod) =>
 
                 <Item producto={prod} key={prod.id} />
 
             )}
-            </container>
+            </Container>
         </div>
 
 

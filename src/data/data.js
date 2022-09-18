@@ -2,7 +2,7 @@ export const stock = [{
     id: 1,
     nombre: "JohnDeere7230JNuevoRodadoDualPatonPiloto",
     precio: "350000",
-    imagen:  '../../asset/JohnDeere.jpg',
+    imagen:  'asset/JohnDeere.jpg',
     stock: 2,
     descripcion: "Motor agrícola John Deere PowerTech™ de 6,8L y 6 cilindros de 230 hp con inyección electrónica de alta presión Common Rail. Transmisión AutoQuad™ Plus con 16 marchas de avance y 16 de retroceso. Chasis de acero fundido de diseño integral; Equipado de fábrica con JDLink ™ y piloto automático Autotrac",
 

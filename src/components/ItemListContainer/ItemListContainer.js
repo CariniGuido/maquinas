@@ -7,65 +7,38 @@ import '../../assets/styles/item.css';
 import { useParams } from "react-router-dom";
 
 
-import { collection, getDocs, getFirestore, Query,  where } from "firebase/firestore";
+import { collection, getDocs,  query,  where } from "firebase/firestore";
 import { db } from "../../firebase/config";
 
 const ItemListContainer = () => {
     const [loading, setLoading] = useState(true)
     const [productos, setProductos] = useState([])
 
-    const { categoriaId } = useParams()
+    const {categoriaId } = useParams()
 
 
+console.log (categoriaId)
 
-
-    useEffect( () => {
+   
         
    
-        const db = getFirestore()
+
+    useEffect(() => {
+        setLoading(true)
+        const productosRef = collection(db, 'productos')
+        const q = categoriaId 
+                    ? query(productosRef, where('categoria', '==', categoriaId) )
+                    : productosRef
+        getDocs(q)
+            .then((resp) => {
+                const productosDB = resp.docs.map( (doc) => ({id: doc.id, ...doc.data()}) )
+                setProductos(productosDB)
+            })
+            .finally(() => {
+                setLoading(false)
+            })
     
-        const productosRef = collection(db, 'items')
-    
-        if (categoriaId) { //Hacemos el if para comprobar si hay una categoria (la tomamos del useParams)
-    
-          const QueryCollectionFiltered = Query(QueryCollection, where('categoria', '==', categoriaId)) //Guardamos el filtrado en una constante
-    
-          getDocs(QueryCollection) //Traemos los docs de la query filtrada
-    
-          .then(response => setProductos(response.docs.map(producto => { //Seteamos el state
-    
-            return {id: producto.id,
-    
-              ...producto.data()
-    
-            }
-    
-          }))
-    
-          )
-    
-          .catch(err => console.log(err))
-    
-        } else {
-    
-          getDocs(QueryCollection)
-    
-          .then(response => setProductos(response.docs.map(film => { //Como ves aca repetimos codigo, podrias optimizar esto haciendo una funcion
-    
-                        return {id: producto.id,
-    
-                          ...producto.data()
-    
-                        }
-    
-          }))
-    
-          )
-    
-          .catch(err => console.log(err))
-          
-        }
- 
+       
         
       }, [categoriaId, setLoading, ])
     

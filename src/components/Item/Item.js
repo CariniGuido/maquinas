@@ -4,7 +4,7 @@
 import { Link } from 'react-router-dom';
 
 import Card from 'react-bootstrap/Card';
-
+import { Container } from 'react-bootstrap';
 
 const Item = ({producto}) => {
 
@@ -12,7 +12,7 @@ const Item = ({producto}) => {
 const  {imagen, nombre, precio , stock, id} = producto
 
     return (
-       <container className= "col-4" >
+       <Container className= "col-4" >
         <div className='container d-flex h-100'>
            
             <Card style={{ width: '18rem' }}>
@@ -31,7 +31,7 @@ const  {imagen, nombre, precio , stock, id} = producto
 
         </div>
 
-</container>
+</Container>
 
 
 
