@@ -1,0 +1,94 @@
+
+
+
+h1 {
+   
+    font: normal 140px Varela Round, sans-serif;
+  
+    left: 0;
+    letter-spacing: 5px;
+    margin: -80px 0 0 0;
+ position: absolute;
+    text-align: center;
+    text-transform: uppercase;
+    top: 50%;
+    width: 100%;
+  
+  
+
+}
+
+h2 {
+  text-align: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+ margin-top: 20px ;
+
+}
+
+.ImagenTarjeta { height: 300px;
+width: 400px;
+margin-left: 10px;
+
+
+}
+
+.TextoTarjeta {
+    font-size: medium;
+justify-content: space-between;
+margin-left: 10px;
+
+}
+
+.PrecioTarjeta
+{
+    margin-left: 10px ;
+}
+
+.StockTarjeta {
+    margin-left: 10px;
+}
+
+
+.spinner {
+  
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  min-width: 200vh;
+}
+  
+
+.icono
+ {
+   color: rgb(255, 255, 255);
+ } 
+  
+
+
+
+
+
+.links1 {
+
+  align-items: stretch;
+  margin :auto;
+  color: grey;
+  text-decoration:none;
+text-align: justify ;
+align-items: stretch;
+}
+
+.links2  {
+  color: grey;
+  text-decoration:none;
+  margin : auto;
+  text-align: justify;
+  align-content: space-between;
+}
+
+.imagenEnCarro {
+
+  height: 90px;
+  width: 90px;
+
+}
