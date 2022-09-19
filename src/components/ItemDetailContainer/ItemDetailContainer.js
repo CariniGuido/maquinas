@@ -18,6 +18,7 @@ export const ItemDetailContainer = () => {
         setLoading(true)
 
         const docRef = doc(db, 'productos', itemId)
+        console.log (itemId)
 
         getDoc(docRef)
 

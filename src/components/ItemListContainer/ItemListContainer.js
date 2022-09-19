@@ -5,7 +5,7 @@ import ItemList from "../ItemList/ItemList";
 import { HashLoader } from 'react-spinners';
 import '../../assets/styles/item.css';
 import { useParams } from "react-router-dom";
-
+import { Container } from 'react-bootstrap';
 
 import { collection, getDocs,  query,  where } from "firebase/firestore";
 import { db } from "../../firebase/config";
@@ -17,7 +17,7 @@ const ItemListContainer = () => {
     const {categoriaId } = useParams()
 
 
-console.log (categoriaId)
+
 
    
         
@@ -48,6 +48,7 @@ console.log (categoriaId)
         loading ? <HashLoader className="spinner" />
 
             :
+            <Container className=" Container my-5">
             <div className="listas">
 
 
@@ -57,7 +58,7 @@ console.log (categoriaId)
                 </div>
             </div>
 
-
+           </Container>
     )
 }
 

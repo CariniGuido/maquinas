@@ -13,7 +13,7 @@ const  {imagen, nombre, precio , stock, id} = producto
 
     return (
        <Container className= "col-4" >
-        <div className='container d-flex h-100'>
+        <div className="container d-flex h-100">
            
             <Card style={{ width: '18rem' }}>
         
@@ -24,7 +24,7 @@ const  {imagen, nombre, precio , stock, id} = producto
         <small className='StockTarjeta'>Stock disp: {stock}</small>
           
         </Card.Text>
-        <Link className='links1'  to= {`/item/${id}`} variant="dark"> Ver Mas</Link>
+        <Link className="links1"  to= {`/item/${id}`} variant="dark"> Ver Mas</Link>
         <p>{precio}</p>
       </Card.Body>
     </Card>

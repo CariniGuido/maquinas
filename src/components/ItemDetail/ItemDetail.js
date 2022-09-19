@@ -4,7 +4,7 @@ import Card from 'react-bootstrap/Card';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Contador } from '../contador';
 import ListGroup from 'react-bootstrap/ListGroup';
-
+import { Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 import { useContext, useState } from 'react';
@@ -28,12 +28,12 @@ const ItemDetail = ({ Item }) => {
 
      
     addToCart(agregarAlCarro)
-    console.log (IsInCart)
+    
 
   }
   return (
-    <container className=" container my-5">
-      <div className='container my-5'>
+    <Container className=" container my-3">
+     
 
 
 
@@ -73,9 +73,8 @@ const ItemDetail = ({ Item }) => {
             handleAgregar={handleAgregar} />
         }
        
-      </div>
      
-    </container>
+    </Container>
 
 
 
