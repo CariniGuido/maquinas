@@ -32,9 +32,9 @@ export const ItemDetailContainer = () => {
 
             })
 
-
+             
     }, [itemId, setLoading])
-
+    console.log (item.Id)
     return (
 
         <div>

@@ -52,7 +52,7 @@ const ItemListContainer = () => {
             <div className="listas">
 
 
-                <div className="items">
+                <div className="items, mx-1">
 
                     <ItemList productos={productos} />
                 </div>
