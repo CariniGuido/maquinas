@@ -4,8 +4,9 @@ import { CartContext } from "../CartContext/CartContext"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Card from 'react-bootstrap/Card';
 import '../../assets/styles/item.css'
-
+import { Link } from 'react-router-dom';
 import {faTrash} from   '@fortawesome/free-solid-svg-icons'
+import styles from './Cart.module.scss';
 export const Cart = () => {
 
     const { cart, precioFinal , vaciarCarrito, removeItem    } = useContext(CartContext)
@@ -15,7 +16,7 @@ export const Cart = () => {
        
        <div className="container my-5">
 
-            <h2>
+            <h2 className={`${styles.titulo} ${styles.tipoLetra}  ` }   >
 
                 Mi Carrito
             </h2>
@@ -35,7 +36,7 @@ export const Cart = () => {
 
             <h4> Total: $ {precioFinal ()} </h4>
             <Button onClick={vaciarCarrito} className="btn btn-dark"> Vaciar Carrito</Button>
-           
+            <Link className="btn btn-dark" to='/Checkout'>Terminar mi compra</Link> 
         </div>
 
     )

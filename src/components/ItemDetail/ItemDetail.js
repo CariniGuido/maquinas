@@ -32,10 +32,10 @@ const ItemDetail = ({ Item }) => {
 
   }
   return (
-    <Container className=" container my-3">
+    <Container className="d-flex justify-content-center mt-5 mb-2">
      
 
-
+           <div className='col-4'>
 
         <Card style={{ width: '18rem' }}>
 
@@ -62,7 +62,7 @@ const ItemDetail = ({ Item }) => {
         </ListGroup>
         { IsInCart(Item.id) ? 
        
-       <Link to="/cart" className="btn btn-dark my-2
+       <Link to="/cart" className="btn btn-dark 
 
        ">Finalizar Compra</Link>
           
@@ -73,7 +73,7 @@ const ItemDetail = ({ Item }) => {
             handleAgregar={handleAgregar} />
         }
        
-     
+       </div>
     </Container>
 
 

@@ -1,42 +1,42 @@
 
- import '../../assets/styles/item.css'
+import '../../assets/styles/item.css'
 
 import { Link } from 'react-router-dom';
 
 import Card from 'react-bootstrap/Card';
 import { Container } from 'react-bootstrap';
 
-const Item = ({producto}) => {
+const Item = ({ producto }) => {
 
 
-const  {imagen, nombre, precio , stock, id} = producto
+  const { imagen, nombre, precio, stock, id } = producto
 
-    return (
-       <Container className= "col-4" >
-        <div className="container d-flex h-100">
-           
-            <Card style={{ width: '18rem' }}>
-        
-      <Card.Img variant="top" src= {imagen} />
-      <Card.Body>
-        <Card.Title>{nombre}</Card.Title>
-        <Card.Text>
-        <small className='StockTarjeta'>Stock disp: {stock}</small>
-          
-        </Card.Text>
-        <Link className="links1"  to= {`/item/${id}`} variant="dark"> Ver Mas</Link>
-        <p>{precio}</p>
-      </Card.Body>
-    </Card>
+  return (
+    <Container className="col-4" >
+      <div className="container d-flex h-100">
 
-        </div>
+        <Card style={{ width: '18rem' }}>
 
-</Container>
+          <Card.Img variant="top" src={imagen} />
+          <Card.Body>
+            <Card.Title>{nombre}</Card.Title>
+            <Card.Text>
+              <small className='StockTarjeta'>Stock disp: {stock}</small>
+
+            </Card.Text>
+            <Link className="links1" to={`/item/${id}`} variant="dark"> Ver Mas</Link>
+            <p>{precio}</p>
+          </Card.Body>
+        </Card>
+
+      </div>
+
+    </Container>
 
 
 
-    )
+  )
 
-} 
+}
 
 export default Item 

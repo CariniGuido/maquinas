@@ -48,11 +48,11 @@ const ItemListContainer = () => {
         loading ? <HashLoader className="spinner" />
 
             :
-            <Container className=" Container my-5">
-            <div className="listas">
+            <Container className=" ">
+            <div className="">
 
 
-                <div className="items, mx-1">
+                <div className="col-12">
 
                     <ItemList productos={productos} />
                 </div>

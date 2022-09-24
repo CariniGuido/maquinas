@@ -1,12 +1,10 @@
-import { createContext } from "react";
+import { createContext, useContext } from "react";
 
 import { useState } from "react";
 import Swal from "sweetalert2";
 export const CartContext = createContext()
 
 export const CartProvider = ({ children }) => {
-
-
 
     const [cart, setCart] = useState([])
 
@@ -91,6 +89,10 @@ export const CartProvider = ({ children }) => {
 
 } 
 
+export const useCartContext = () => {
+
+    return useContext (CartContext)
+}
 
 
 
