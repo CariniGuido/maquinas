@@ -13,3 +13,6 @@ Estilos con Bootstrap
 Ruteo con React Router Dom
 
 Alertas con Sweet Alert
+
+PARA VER PAGINA EN NETLIFY
+https://agroonline.netlify.app/
