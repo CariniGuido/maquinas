@@ -5,13 +5,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 import { Cart } from './components/Cart/Cart';
-
+ 
 import { Navegador } from '../src/components/navbar';
 import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer';
 
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Checkout from '../src/components/Checkout/Checkout';
+import Checkout from '../src/components/Checkout/Checkout'; 
 
 import { CartProvider } from './components/CartContext/CartContext'; 
 import { LoginProvider } from './components/LoginContext/LoginContext';
