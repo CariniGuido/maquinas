@@ -6,9 +6,14 @@ import { faTractor } from '@fortawesome/free-solid-svg-icons'
 import { IconoCarrito } from './carrito';
 import { Link } from 'react-router-dom';
 import '../assets/styles/item.css';
+import { LoginContext } from "./LoginContext/LoginContext";
+import { useContext } from 'react';
+
 
 
 export const Navegador = () => {
+
+  const {logout, user} = useContext(LoginContext)
 
   return (
 
@@ -40,7 +45,7 @@ export const Navegador = () => {
 
 
           </Nav>
-          <Navbar.Brand href="#home"> <IconoCarrito />   </Navbar.Brand>
+          <Navbar.Brand href="#home"> {user.logged && <button className='btn btn-danger' onClick={() => logout()}>Cerrar sesion</button>} <IconoCarrito />   </Navbar.Brand>
         </Container>
       </Navbar>
 

@@ -1,15 +1,20 @@
-import { useState } from "react"
+import { useState, useContext } from "react"
 import { Navigate } from "react-router-dom"
 import {  useCartContext } from "../CartContext/CartContext";
 import { addDoc, collection, getDocs, writeBatch, query, where, documentId } from 'firebase/firestore'
 import { db } from "../../firebase/config"
 import { useForm } from "../UseForm/useForm"
+import { LoginContext } from "../LoginContext/LoginContext"
 ;
+import { useNavigate } from "react-router-dom";
+import LoginScreen from "../LoginScreen/LoginScreen";
+import Swal from "sweetalert2";
 
 const Checkout = () => {
 
     const { cart, precioFinal, terminarCompra } = useCartContext()
-
+    const { user} = useContext(LoginContext)
+    const navigate = useNavigate() 
     const [orderId, setOrderId] = useState(null)
 
     const { values, handleInputChange } = useForm({
@@ -45,7 +50,7 @@ const Checkout = () => {
         const q = query(productosRef, where(documentId(), 'in', cart.map(item => item.id)))
 
         const productos = await getDocs(q)
-
+       
         const outOfStock = []
             
         productos.docs.forEach((doc) => {
@@ -65,7 +70,7 @@ const Checkout = () => {
                 .then(() => {
                     addDoc(ordenesRef, orden)
                         .then((doc) => {
-                            console.log(doc.id)
+                            
                             // terminarCompraConSwal(doc.id)
                             setOrderId(doc.id)
                             terminarCompra()
@@ -73,10 +78,18 @@ const Checkout = () => {
                 })
         } else {
             
-            alert("Hay items sin stock")
-            console.log(outOfStock)
-        }
+           Swal.fire ({
 
+            text: `Hay items sin stock : ${outOfStock.map((item) => item.nombre)}`,
+            icon: "warning",
+            showCancelButton: false,
+            confirmButtonColor: "#d33",
+            confirmButtonText: "OK!",
+             
+        })
+        navigate ("/cart") 
+        }
+        
     }
 
     if (orderId) {
@@ -92,7 +105,9 @@ const Checkout = () => {
     if (cart.length === 0) {
         return <Navigate to="/"/>
     }
-
+   if (!user.logged) {
+       return <LoginScreen/>
+   }
     return (
         <div className="container my-5">
             <h2>Checkout</h2>

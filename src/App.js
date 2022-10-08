@@ -14,11 +14,13 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Checkout from '../src/components/Checkout/Checkout';
 
 import { CartProvider } from './components/CartContext/CartContext'; 
+import { LoginProvider } from './components/LoginContext/LoginContext';
+import LoginScreen from './components/LoginScreen/LoginScreen';
 
 
 const App = () => {
   return (
-
+    <LoginProvider>
     <CartProvider>
       <BrowserRouter>
         <Navegador></Navegador>
@@ -26,6 +28,7 @@ const App = () => {
 
           <Route path='/' element={<ItemListContainer />} />
           <Route path='/productos/:categoriaId' element={<ItemListContainer />} />
+          <Route path='/login' element={<LoginScreen />} />
           <Route path='/cart' element={<Cart />} />
           <Route path='/item/:itemId' element={<ItemDetailContainer />} />
           <Route path='/Checkout'   element = {<Checkout />} />
@@ -41,6 +44,7 @@ const App = () => {
 
 
     </CartProvider>
+    </LoginProvider>
 
   );
 }

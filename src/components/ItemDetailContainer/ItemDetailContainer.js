@@ -18,7 +18,7 @@ export const ItemDetailContainer = () => {
         setLoading(true)
 
         const docRef = doc(db, 'productos', itemId)
-        console.log (itemId)
+        
 
         getDoc(docRef)
 
@@ -34,7 +34,7 @@ export const ItemDetailContainer = () => {
 
              
     }, [itemId, setLoading])
-    console.log (item.Id)
+    
     return (
 
         <div>
