@@ -16,3 +16,14 @@ Alertas con Sweet Alert
 
 PARA VER PAGINA EN NETLIFY
 https://agroonline.netlify.app/
+
+para probar el login 
+
+ email 'cariniguido@gmail.com',
+ password: '123456'
+    
+  email: 'guidocarini8@hotmail.com',
+        password: '1234'
+    
+  email: 'coderhouse@gmail.com',
+  password: 'coder'
